@@ -27,7 +27,7 @@ typedef struct n_stack
 }	t_stack;
 ////////////////////////////UTILS///////////////////////////////
 long long	ft_atol(const char *str);
-char		**ft_split(char const *s, char c);
+char		**ft_split(char const *s);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 void		malloc_check(void *str);
 void		repetation_check(t_stack **stack);
@@ -47,6 +47,7 @@ size_t		ft_strlen(const char *s);
 t_stack		*ft_lstlast(t_stack *stack);
 t_stack		**validation(char **stack, t_stack **stack1);
 void		dealoc(t_stack **stack);
+void		overflow_check(char *nbr);
 /////////////////////////////OPERATIONS/////////////////////////
 void		rotate(t_stack **stack);
 void		ra(t_stack **stack1);

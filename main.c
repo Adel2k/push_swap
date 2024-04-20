@@ -18,7 +18,7 @@ int	main(int ac, char **av)
 
 	stack1 = NULL;
 	if (ac == 1 || (ac == 2 && !av[1][0]))
-		error_handle();
+		return 0;
 	parser(av, &stack1);
 	sorting(&stack1);
 	dealoc(&stack1);

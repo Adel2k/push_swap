@@ -37,7 +37,7 @@ static size_t	word_count(const char *s, char c)
 	return (count);
 }
 
-static char	**split(char **memory, char const *s, char c)
+static char	**split(char **memory, char const *s)
 {
 	int		i;
 	int		j;
@@ -47,12 +47,12 @@ static char	**split(char **memory, char const *s, char c)
 	temp = memory;
 	while (s[i] != '\0' )
 	{
-		if (s[i] != c)
+		if (s[i] == 32 || (s[i] >= 9 && s[i] <= 13))
 		{
 			j = i;
-			while (s[i] != c && s[i] != '\0')
+			while ((s[i] != 32 || (s[i] >= 9 && s[i] <= 13)) && s[i] != '\0')
 				i++;
-			if ((s[i] == c || s[i] == '\0'))
+			if (s[i] == 32 || (s[i] >= 9 && s[i] <= 13))
 			{
 				*temp = ft_substr(s, j, i - j);
 				temp++;
@@ -65,7 +65,7 @@ static char	**split(char **memory, char const *s, char c)
 	return (memory);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const *s)
 {
 	char	**memory;
 
@@ -77,10 +77,10 @@ char	**ft_split(char const *s, char c)
 		if (*s == 0)
 			return (0);
 	}
-	memory = (char **)malloc(sizeof(char *) * (word_count(s, c) + 1));
+	memory = (char **)malloc(sizeof(char *) * (word_count(s) + 1));
 	if (!memory)
 		return (NULL);
-	return (split(memory, s, c));
+	return (split(memory, s));
 }
 /*
 int main ()

@@ -46,9 +46,22 @@ long long	ft_atol(const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 		numb = (numb * 10) + (str[i++] - '0');
 	numb = numb * sign;
-	if (numb > INT_MAX || numb < -2147483648)
+	if (numb > INT_MAX || numb < INT_MIN)
 		error_handle();
 	return (numb);
+}
+
+void	overflow_check(char *nbr)
+{
+	int	i;
+
+	i = 0;
+	while (nbr[i])
+		i++;
+	if (i > 11)
+		error_handle();
+	else
+		return ;
 }
 
 size_t	ft_strlen(const char *str)

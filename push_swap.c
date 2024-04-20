@@ -76,6 +76,7 @@ t_stack	**validation(char **stack, t_stack **stack1)
 			free(*stack);
 			exit(1);
 		}
+		overflow_check(*stack);
 		nbr = ft_atol(*stack);
 		init_stack(stack1, nbr);
 		stack++;
@@ -96,7 +97,7 @@ void	parser(char **av, t_stack **stack1)
 	i = 1;
 	while (av[i])
 	{
-		stack_a = ft_split(av[i], ' ');
+		stack_a = ft_split(av[i]);
 		if (!(stack_a))
 			error_handle();
 		stack = validation(stack_a, stack1);
