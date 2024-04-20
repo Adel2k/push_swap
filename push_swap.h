@@ -17,6 +17,7 @@
 # include <limits.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include "get_next_line.h"
 
 /////////////////////////////STRUCT/////////////////////////////
 typedef struct n_stack
@@ -52,7 +53,7 @@ void		overflow_check(char *nbr);
 void		rotate(t_stack **stack);
 void		ra(t_stack **stack1);
 void		rb(t_stack **stack1);
-void		rr(t_stack **stack1, t_stack **stack2);
+void		rr(t_stack **stack1, t_stack **stack2, char s);
 void		swap(t_stack *stack, char specifier);
 void		swap_both(t_stack *stack_a, t_stack *stack_b);
 void		push(t_stack **stack_a, t_stack **stack_b);
@@ -61,7 +62,7 @@ void		pa(t_stack **stack_a, t_stack **stack_b);
 void		reverse_rotate(t_stack **stack);
 void		rrb(t_stack **stack);
 void		rra(t_stack **stack);
-void		rrr(t_stack **stack1, t_stack **stack2);
+void		rrr(t_stack **stack1, t_stack **stack2, char s);
 /////////////////////////////SORTING////////////////////////////
 void		sorting(t_stack **stack);
 void		sort_in_a(t_stack **stack_a, t_stack *stack_b, int maxn, int n);
@@ -72,5 +73,10 @@ void		simple_sort(t_stack **a, t_stack **b);
 int			is_sorted(t_stack *stack);
 int			min_in_a(t_stack *a, int len);
 void		reverse_rotate(t_stack **a);
+////////////////////////////BONUS///////////////////////////////
+void	    input_check(char *str, t_stack **a, t_stack **b);
+int			ft_strcmp(const char *s1, const char *s2);
+void    	checker_validation(t_stack **stack_a, t_stack **stack_b);
+int			is_sorted_checker(t_stack *stack);
 
 #endif

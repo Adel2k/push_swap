@@ -25,6 +25,8 @@ void	swap(t_stack *stack, char specifier)
 		write(1, "sa\n", 3);
 	if (specifier == 'b')
 		write(1, "sb\n", 3);
+	if (specifier == 'B')
+		return ;
 	if (specifier == 's')
 		return ;
 	return ;

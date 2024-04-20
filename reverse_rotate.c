@@ -40,21 +40,28 @@ void	reverse_rotate(t_stack **a)
 
 void	rra(t_stack **stack)
 {
+	if (!stack || !*stack || (*stack)->next == NULL)
+		return ;
 	reverse_rotate(stack);
 	write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack **stack)
 {
-	if (!stack || (*stack)->next == NULL)
+	if (!stack || !*stack || (*stack)->next == NULL)
 		return ;
 	reverse_rotate(stack);
 	write(1, "rrb\n", 4);
 }
 
-void	rrr(t_stack **stack1, t_stack **stack2)
+void	rrr(t_stack **stack1, t_stack **stack2, char s)
 {
+	if (!stack1 || !*stack1 || (*stack1)->next == NULL
+		|| !stack2 || !*stack2 || (*stack2)->next == NULL)
+		return ;
 	reverse_rotate(stack1);
 	reverse_rotate(stack2);
+	if (s == 'B')
+		return ;
 	write(1, "rrr\n", 4);
 }

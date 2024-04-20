@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static size_t	word_count(const char *s, char c)
+static size_t	word_count(const char *s)
 {
 	size_t	count;
 	size_t	i;
@@ -21,17 +21,17 @@ static size_t	word_count(const char *s, char c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] != c)
+		if (s[i] != 32 && !(s[i] >= 9 && s[i] <= 13))
 		{
 			count++;
-			while (s[i] && s[i] != c)
+			while (s[i] && s[i] != 32 && !(s[i] >= 9 && s[i] <= 13))
 			{
 				i++;
 				if (s[i] == 0)
 					break ;
 			}
 		}
-		else if (s[i] == c)
+		else if (s[i] == 32 || (s[i] >= 9 && s[i] <= 13))
 			i++;
 	}
 	return (count);
@@ -45,14 +45,14 @@ static char	**split(char **memory, char const *s)
 
 	i = 0;
 	temp = memory;
-	while (s[i] != '\0' )
+	while (s[i])
 	{
-		if (s[i] == 32 || (s[i] >= 9 && s[i] <= 13))
+		if (s[i] != 32 && !(s[i] >= 9 && s[i] <= 13))
 		{
 			j = i;
-			while ((s[i] != 32 || (s[i] >= 9 && s[i] <= 13)) && s[i] != '\0')
+			while ((s[i] != 32 && !(s[i] >= 9 && s[i] <= 13)) && s[i] != '\0')
 				i++;
-			if (s[i] == 32 || (s[i] >= 9 && s[i] <= 13))
+			if (s[i] == 32 || (s[i] >= 9 && s[i] <= 13) || s[i] == 0)
 			{
 				*temp = ft_substr(s, j, i - j);
 				temp++;

@@ -45,6 +45,8 @@ void	repetation_check(t_stack **stack)
 	t_stack	*current;
 	t_stack	*runner;
 
+	while (!stack || !*stack)
+		error_handle();
 	current = *stack;
 	while (current)
 	{

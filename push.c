@@ -17,7 +17,7 @@ void	push(t_stack **stack_a, t_stack **stack_b)
 	t_stack	*temp_a;
 
 	if (*stack_a == NULL)
-		error_handle();
+		return ;
 	temp_a = *stack_a;
 	*stack_a = (*stack_a)->next;
 	temp_a->next = *stack_b;
@@ -26,12 +26,16 @@ void	push(t_stack **stack_a, t_stack **stack_b)
 
 void	pa(t_stack **stack_a, t_stack **stack_b)
 {
+	if (*stack_a == NULL)
+		return ;
 	push(stack_a, stack_b);
 	write(1, "pa\n", 3);
 }
 
 void	pb(t_stack **stack_a, t_stack **stack_b)
 {
+	if (*stack_a == NULL)
+		return ;
 	push(stack_a, stack_b);
 	write(1, "pb\n", 3);
 }

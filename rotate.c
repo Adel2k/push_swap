@@ -38,15 +38,17 @@ void	ra(t_stack **stack1)
 
 void	rb(t_stack **stack1)
 {
-	if (!stack1 || (*stack1)->next == NULL)
+	if (!*stack1 || (*stack1)->next == NULL)
 		return ;
 	rotate(stack1);
 	write(1, "rb\n", 3);
 }
 
-void	rr(t_stack **stack1, t_stack **stack2)
+void	rr(t_stack **stack1, t_stack **stack2, char s)
 {
 	rotate(stack1);
 	rotate(stack2);
+	if (s == 'B')
+		return ;
 	write(1, "rr\n", 3);
 }
