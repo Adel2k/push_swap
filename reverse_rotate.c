@@ -17,7 +17,7 @@ void	reverse_rotate(t_stack **a)
 	t_stack	*tmp;
 	t_stack	*last;
 
-	if (*a == NULL || a == NULL)
+	if (!*a || !a)
 		return ;
 	tmp = (*a);
 	last = 0;
@@ -56,9 +56,6 @@ void	rrb(t_stack **stack)
 
 void	rrr(t_stack **stack1, t_stack **stack2, char s)
 {
-	if (!stack1 || !*stack1 || (*stack1)->next == NULL
-		|| !stack2 || !*stack2 || (*stack2)->next == NULL)
-		return ;
 	reverse_rotate(stack1);
 	reverse_rotate(stack2);
 	if (s == 'B')
