@@ -6,7 +6,7 @@
 /*   By: aeminian <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 17:39:13 by aeminian          #+#    #+#             */
-/*   Updated: 2024/04/18 20:35:42 by aeminian         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:24:29 by aeminian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ int			is_sorted(t_stack *stack);
 int			min_in_a(t_stack *a, int len);
 void		reverse_rotate(t_stack **a);
 ////////////////////////////BONUS///////////////////////////////
-void	    input_check(char *str, t_stack **a, t_stack **b);
+void		input_check(char *str, t_stack **a, t_stack **b);
 int			ft_strcmp(const char *s1, const char *s2);
-void    	checker_validation(t_stack **stack_a, t_stack **stack_b);
+void		checker_validation(t_stack **stack_a, t_stack **stack_b);
 int			is_sorted_checker(t_stack *stack);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aeminian <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 17:28:18 by aeminian          #+#    #+#             */
-/*   Updated: 2024/04/04 18:00:08 by aeminian         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:23:36 by aeminian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int ac, char **av)
 
 	stack1 = NULL;
 	if (ac == 1 || (ac == 2 && !av[1][0]))
-		return 0;
+		return (0);
 	parser(av, &stack1);
 	sorting(&stack1);
 	dealoc(&stack1);
