@@ -54,11 +54,22 @@ long long	ft_atol(const char *str)
 void	overflow_check(char *nbr)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (nbr[i])
+	if (nbr[i] == '-' || nbr[i] == '+')
 		i++;
-	if (i > 11)
+	while (nbr[i] == '0')
+		i++;
+	j = 0;
+	while (nbr[i])
+	{
+		if (nbr[i] == 0)
+			break;
+		j++;
+		i++;
+	}
+	if (j > 11)
 		error_handle();
 	else
 		return ;

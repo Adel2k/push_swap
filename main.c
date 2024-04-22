@@ -17,7 +17,7 @@ int	main(int ac, char **av)
 	t_stack	*stack1;
 
 	stack1 = NULL;
-	if (ac == 1 || (ac == 2 && !av[1][0]))
+	if (ac <= 1)
 		return (0);
 	parser(av, &stack1);
 	sorting(&stack1);
